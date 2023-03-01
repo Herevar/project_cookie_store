@@ -1,0 +1,21 @@
+<!-- //main.hbs zostanie wyswietlony w home.hbs w miejscu {{{body}}} -->
+
+{{#with zmienne}}
+<h1> heloł wort {{pierwsza}} i {{druga}}</h1>
+{{/with}}
+
+
+<ul>
+  {{#each zmienne.trzecia}}
+  <li>{{this}}</li>
+  {{/each}}
+</ul>
+
+{{> share}}
+{{> share}}
+
+{{#if kurwa}}
+<h2>działa, {{kurwa}}</h2>
+{{else}}
+<h2>nie działa</h2>
+{{/if}}
