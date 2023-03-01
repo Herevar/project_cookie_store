@@ -20,7 +20,7 @@ app.engine(".hbs", hbs.engine({ extname: ".hbs" }));
 // wskazujemy ze bedziemy uzywac plików z roszezeniem .hbs
 app.set("view engine", ".hbs");
 // i wskazujemy ze silnikiem widoków bedzie .hbs --- zakrecone fchuj xD
-//app.set("views", "./views"); // wskazujemy scieżke folder views gdzies wszystko jest
+app.set("views", "./main1/views"); // wskazujemy scieżke folder views gdzies wszystko jest
 
 app.get("/jou", (req, res) => {
   res.render("home", {
@@ -33,6 +33,9 @@ app.get("/jou", (req, res) => {
   });
 });
 
+app.get('/zxc', (req,res)=>{
+  res.render("home")
+})
 
 app.get('/asd', (req,res)=>{
   res.send('ok')
