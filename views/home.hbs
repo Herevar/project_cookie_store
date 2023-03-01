@@ -1,14 +1,21 @@
-<!DOCTYPE html>
-<html>
+<!-- main.hbs zostanie wyswietlony w home.hbs w miejscu 'body' -->
 
-<head>
-  <title>Parcel Sandbox</title>
-  <meta charset="UTF-8" />
-</head>
+{{#with zmienne}}
+<h1> heloł wort {{pierwsza}} i {{druga}}</h1>
+{{/with}}
 
-<body>
-  <p>//taki zapis musi byc jak poniżej : body w 3 nawiasach</p>
 
-</body>
+<ul>
+  {{#each zmienne.trzecia}}
+  <li>{{this}}</li>
+  {{/each}}
+</ul>
 
-</html>
+{{> share}}
+{{> share}}
+
+{{#if kurwa}}
+<h2>działa, {{kurwa}}</h2>
+{{else}}
+<h2>nie działa</h2>
+{{/if}}

@@ -22,7 +22,7 @@ app.set("view engine", ".hbs");
 // i wskazujemy ze silnikiem widoków bedzie .hbs --- zakrecone fchuj xD
 app.set("views", "./views"); // wskazujemy scieżke folder views gdzies wszystko jest
 
-app.get("/jou", (req, res) => {
+app.get("/", (req, res) => {
   res.render("home", {
     kurwa: "kurwamac123",
     zmienne: {
@@ -41,3 +41,20 @@ app.get('/asd', (req,res)=>{
   res.send('ok')
 })
 app.listen(3001, "localhost");
+
+//
+// <!DOCTYPE html>
+// <html>
+
+// <head>
+//   <title>Parcel Sandbox</title>
+//   <meta charset="UTF-8" />
+// </head>
+
+// <body>
+// <h1> taki zapis musi byc jak poniżej : body w 3 nawiasach </h1>
+
+// </body>
+
+
+// </html>
