@@ -3,6 +3,8 @@ const app = express();
 const cookieParser = require("cookie-parser");
 const hbs = require("express-handlebars");
 //npm i express-handlebars
+
+app.use(express.static('public'));
 app.use(cookieParser());
 
 app.use(express.json());
