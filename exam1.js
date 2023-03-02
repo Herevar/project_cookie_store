@@ -1,10 +1,13 @@
+const {basename, dirname, resolve, normalize, join} = require('path');
+var path = require('path');
+
 const express = require("express");
 const app = express();
 const cookieParser = require("cookie-parser");
 const hbs = require("express-handlebars");
 //npm i express-handlebars
-
-app.use(express.static('public'));
+// app.use(express.static(path.join(__dirname, 'public')))
+// app.use(express.static('public',));
 app.use(cookieParser());
 
 app.use(express.json());
@@ -44,7 +47,7 @@ app.get('/asd', (req,res)=>{
 })
 app.listen(3001, "localhost");
 
-//
+//<img src="/provejt/home/herevar/workspace/public/LOGO.bmp">
 // <!DOCTYPE html>
 // <html>
 
@@ -60,3 +63,7 @@ app.listen(3001, "localhost");
 
 
 // </html>
+
+// console.log(__dirname)
+
+// console.log(__filename)
