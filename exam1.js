@@ -1,8 +1,18 @@
+// const {basename, dirname, resolve, normalize, join} = require('path');
+// var path = require('path');
+
 const express = require("express");
 const app = express();
 const cookieParser = require("cookie-parser");
 const hbs = require("express-handlebars");
+const { homeRouter } = require("./routers/home");
+const { configuratorRouter } = require("./routers/configurator");
+const { orderRouter } = require("./routers/order");
+
+
 //npm i express-handlebars
+// app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static('public',));
 app.use(cookieParser());
 
 app.use(express.json());
@@ -22,8 +32,14 @@ app.set("view engine", ".hbs");
 // i wskazujemy ze silnikiem widoków bedzie .hbs --- zakrecone fchuj xD
 app.set("views", "./views"); // wskazujemy scieżke folder views gdzies wszystko jest
 
-app.get("/", (req, res) => {
-  res.render("home", {
+
+
+app.use('/', homeRouter);
+app.use('/configuratorRouter', configuratorRouter);
+app.use('/orderRouter', orderRouter);
+
+app.get("/jo", (req, res) => {
+  res.render("home_test", {
     kurwa: "kurwamac123",
     zmienne: {
       pierwsza: "rower",
@@ -33,16 +49,11 @@ app.get("/", (req, res) => {
   });
 });
 
-app.get('/zxc', (req,res)=>{
-  res.render("home")
-})
 
-app.get('/asd', (req,res)=>{
-  res.send('ok')
-})
+
 app.listen(3001, "localhost");
 
-//
+//<img src="/provejt/home/herevar/workspace/public/LOGO.bmp">
 // <!DOCTYPE html>
 // <html>
 
@@ -58,3 +69,7 @@ app.listen(3001, "localhost");
 
 
 // </html>
+
+// console.log(__dirname)
+
+// console.log(__filename)
