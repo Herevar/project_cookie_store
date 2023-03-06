@@ -8,6 +8,7 @@ const hbs = require("express-handlebars");
 const { homeRouter } = require("./routers/home");
 const { configuratorRouter } = require("./routers/configurator");
 const { orderRouter } = require("./routers/order");
+const { handlebarsHelpers } = require("./handlebars-helpers");
 
 
 //npm i express-handlebars
@@ -19,7 +20,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 //kurwa jaki zapis musi byc...
 // app.engine('.hbs' , hbs({extname: '.hbs'}))
-app.engine(".hbs", hbs.engine({ extname: ".hbs" }));
+app.engine(".hbs", hbs.engine({ 
+  extname: ".hbs",
+  helpers: handlebarsHelpers }));
 
 //Jakby ktoś miał problem z hbs is not a function to polecam zamienić linijkę
 //app.engine('.hbs', hbs({extname:'.hbs'})); na
