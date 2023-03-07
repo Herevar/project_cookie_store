@@ -22,7 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 // app.engine('.hbs' , hbs({extname: '.hbs'}))
 app.engine(".hbs", hbs.engine({ 
   extname: ".hbs",
-  helpers: handlebarsHelpers }));
+  helpers: handlebarsHelpers, }));
 
 //Jakby ktoś miał problem z hbs is not a function to polecam zamienić linijkę
 //app.engine('.hbs', hbs({extname:'.hbs'})); na

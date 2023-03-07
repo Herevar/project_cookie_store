@@ -9,7 +9,7 @@ homeRouter
         cookie: {
             base: 'light',
             addon : ['coconut'],
-        },
+            },
         bases : Object.entries(cookie_base),
         adds : Object.entries(cookie_add)
     })
@@ -21,5 +21,6 @@ homeRouter
 //helpersy robi w osobnym pliku .js jako funkcje - ktora pozniej wywołuje w hbs'ie
 //uzywam funkcje w hbs'ie w {{funkcja dane}} przesyłajac dane (dane wysłane zostały renderem do hbs'a -> home)
 //uzycie tej funkcji "wyrzucamy" do partials'a a pozniej tego partialsa uzywamy w hbsie po prostu
+// trzeba przypilnowac czy dobre przekazane dane z rendera itp itd
 
 module.exports = {homeRouter}
