@@ -1,8 +1,9 @@
 <h3> selected part of cookie </h3>
 
 <ul>
-
     <li>{{cookie.base}} : {{priceFinder bases cookie.base}} PLN</li>
-
-
+    {{#each cookie.addon}}
+    <li>dodatek {{this}} : {{priceFinder @root.adds this}} pln</li>
+    {{/each}}
 </ul>
+

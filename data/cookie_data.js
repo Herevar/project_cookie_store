@@ -4,7 +4,7 @@ const cookie_base = {
        
 }
 const cookie_add = {
-    cocolate : 2,
+    chockolate : 2,
     coconut : 3,
     cranberries : 4,
     honey : 5,

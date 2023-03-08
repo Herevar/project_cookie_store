@@ -1,14 +1,20 @@
 const express = require('express');
 const { cookie_base, cookie_add } = require('../data/cookie_data');
+const { handlebarsHelpers } = require('../handlebars-helpers');
 const homeRouter = express.Router();
 
 
 homeRouter
     .get('/', (req,res)=>{
+        
+    const sum = handlebarsHelpers.priceFinder(Object.entries(cookie_base), 'light') 
+    // + ['coconut','chockolate'].reduce((prev, curr)=> (prev+
+    //handlebarsHelpers.priceFinder(Object.entries(cookie_add), curr)) ,0) 
+    //ale to jest zjebane i bym wolał w petli
     res.render('home_file/home' ,{
         cookie: {
             base: 'light',
-            addon : ['coconut'],
+            addon : ['coconut','chockolate'],
             },
         bases : Object.entries(cookie_base),
         adds : Object.entries(cookie_add)
@@ -23,7 +29,7 @@ homeRouter
 //uzycie tej funkcji "wyrzucamy" do partials'a a pozniej tego partialsa uzywamy w hbsie po prostu
 // trzeba przypilnowac czy dobre przekazane dane z rendera itp itd
     // next step
-// nazwy nie moga sie powtarzac a jesli tak to (np) @root.adds , zamiast adds (ale ja mam 'addon')
+// nazwy nie moga sie powtarzac a jesli tak to (np) @root.adds , zamiast adds ale i tak w #each jest wskazanie, wiec trzeba sie 'cofnac'
 // sumujemy ceny (zaraz przed/nad wysłaniem do rendera) bazujac na funkcji stworzonej w handlebars'ie i wrzucamy
 // przesłany przez rendera do partiala adds.hbs, ktory idzie do home.hbs, a ten do main.hbs xD
 
