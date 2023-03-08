@@ -22,5 +22,9 @@ homeRouter
 //uzywam funkcje w hbs'ie w {{funkcja dane}} przesyłajac dane (dane wysłane zostały renderem do hbs'a -> home)
 //uzycie tej funkcji "wyrzucamy" do partials'a a pozniej tego partialsa uzywamy w hbsie po prostu
 // trzeba przypilnowac czy dobre przekazane dane z rendera itp itd
+    // next step
+// nazwy nie moga sie powtarzac a jesli tak to (np) @root.adds , zamiast adds (ale ja mam 'addon')
+// sumujemy ceny (zaraz przed/nad wysłaniem do rendera) bazujac na funkcji stworzonej w handlebars'ie i wrzucamy
+// przesłany przez rendera do partiala adds.hbs, ktory idzie do home.hbs, a ten do main.hbs xD
 
 module.exports = {homeRouter}
