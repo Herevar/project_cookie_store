@@ -8,7 +8,7 @@ homeRouter
     .get('/', (req,res)=>{
     const {cookieBase} = req.cookies;
     console.log(cookieBase);
-    const sum = (cookieBase ? handlebarsHelpers.priceFinder(Object.entries(cookie_base), cookieBase) : 0) 
+    // const sum = (cookieBase ? handlebarsHelpers.priceFinder(Object.entries(cookie_base), cookieBase) : 0) 
     // + ['coconut','chockolate'].reduce((prev, curr)=> (prev+
     // handlebarsHelpers.priceFinder(Object.entries(cookie_add), curr)) ,0) 
     //ale to jest zjebane i bym wolał w petli
