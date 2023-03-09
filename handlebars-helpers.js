@@ -7,7 +7,8 @@ const handlebarsHelpers ={
         }
         const [, price] = found;
         return price;
-    }
+    },
+    princify : price => price.toFixed(2), 
 }
 
 module.exports = {handlebarsHelpers}
