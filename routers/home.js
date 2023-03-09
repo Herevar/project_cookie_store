@@ -7,7 +7,7 @@ const homeRouter = express.Router();
 homeRouter
     .get('/', (req,res)=>{
     const {cookieBase} = req.cookies;
-        
+    console.log(cookieBase);
     const sum = (cookieBase ? handlebarsHelpers.priceFinder(Object.entries(cookie_base), cookieBase) : 0) 
     // + ['coconut','chockolate'].reduce((prev, curr)=> (prev+
     // handlebarsHelpers.priceFinder(Object.entries(cookie_add), curr)) ,0) 
@@ -15,7 +15,7 @@ homeRouter
     res.render('home_file/home' ,{
         cookie: {
             base: cookieBase,
-            addon : ['coconut','chockolate'],
+            addon : ['coconut','honey'],
             },
         bases : Object.entries(cookie_base),
         adds : Object.entries(cookie_add)
