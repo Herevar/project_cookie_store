@@ -54,7 +54,7 @@ app.get("/jo", (req, res) => {
 
 
 
-app.listen(3001, "localhost");
+app.listen(3002, "localhost");
 
 //<img src="/provejt/home/herevar/workspace/public/LOGO.bmp">
 // <!DOCTYPE html>

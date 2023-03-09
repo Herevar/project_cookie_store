@@ -3,7 +3,8 @@
 {{#with cookie}}
 <div class="cookie-preview" 
     style="background: 
-   
+    {{#each addon}}url('/assets/images/{{this}}.png'),
+    {{/each}} 
     url('/assets/images/empty-{{base}}.png')">
     </div>
 {{/with}}

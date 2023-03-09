@@ -11,6 +11,7 @@ $ = {{this.[1]}} PLNxx </a>
 <button> zamiast guzika ma byc link/ dodateczki; {{this.[0]}} $ = {{this.[1]}} </button>
 {{/each}}
 
-
-{{> previe_cookies}}
-{{> adds}}
+{{#if cookie.base}}
+    {{> previe_cookies}}
+    {{> adds}}
+{{/if}}
