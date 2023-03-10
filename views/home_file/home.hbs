@@ -8,12 +8,11 @@ $ = {{this.[1]}} PLNxx </a>
 
 <h2> $ ADDS FOR COOKIE </h2>
 {{#each adds}}
-<ul>
-    {{#if isNotInArray @root.cookie.addon this[0]}}
-    <li>
-    <a href="/configurator/aditions/{{this.[0]}}">dodatek : {{this.[0]}} $ = {{this.[1]}} </a>
-    </li>
-</ul>    
+
+    {{#if (isNotInArray @root.cookie.addon this.[0])}}
+    <a href="/configurator/aditions/{{this.[0]}}"> Dodatek: {{this.[0]}} = {{this.[1]}}pln</a>
+    {{/if}}  
+    
 {{/each}}
 
 {{#if cookie.base}}
