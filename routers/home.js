@@ -6,19 +6,23 @@ const homeRouter = express.Router();
 
 homeRouter
     .get('/', (req,res)=>{
-    const {cookieBase} = req.cookies;
+    const {cookieBase, cookieAdds} = req.cookies;
     console.log(cookieBase);
-    // const sum = (cookieBase ? handlebarsHelpers.priceFinder(Object.entries(cookie_base), cookieBase) : 0) 
-    // + ['coconut','chockolate'].reduce((prev, curr)=> (prev+
-    // handlebarsHelpers.priceFinder(Object.entries(cookie_add), curr)) ,0) 
+    console.log(cookieAdds)
+    const addons = cookieAdds ? JSON.parse(cookieAdds) : [];
+    
+    const sum = (cookieBase ? handlebarsHelpers.priceFinder(Object.entries(cookie_base), cookieBase) : 0) 
+    + addons.reduce((prev, curr)=> (prev+
+    handlebarsHelpers.priceFinder(Object.entries(cookie_add), curr)) ,0) 
     //ale to jest zjebane i bym wolał w petli
     res.render('home_file/home' ,{
         cookie: {
             base: cookieBase,
-            addon : ['coconut','honey'],
+            addon : addons,
             },
         bases : Object.entries(cookie_base),
-        adds : Object.entries(cookie_add)
+        adds : Object.entries(cookie_add),
+        sum
     })
 })
 //wrenderowujemy home.hbs(strone głowną jakby) do main.hbs
