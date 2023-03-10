@@ -9,6 +9,7 @@ const handlebarsHelpers ={
         return price;
     },
     princify : price => price.toFixed(2), 
+    isNotInArray : (array , elem) => !array.includes(elem),
 }
 
 module.exports = {handlebarsHelpers}

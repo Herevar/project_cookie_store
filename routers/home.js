@@ -1,18 +1,20 @@
 const express = require('express');
 const { cookie_base, cookie_add } = require('../data/cookie_data');
-const { handlebarsHelpers } = require('../handlebars-helpers');
+const { getAddFromReq } = require('../utils/get_add_from_req');
+const { handlebarsHelpers } = require('../utils/handlebars-helpers');
 const homeRouter = express.Router();
 
 
 homeRouter
     .get('/', (req,res)=>{
-    const {cookieBase, cookieAdds} = req.cookies;
-    console.log(cookieBase);
-    console.log(cookieAdds)
-    const addons = cookieAdds ? JSON.parse(cookieAdds) : [];
+    const {cookieBase,} = req.cookies;
+    //jak juz cookieBase jest to mozna uzyć zamiast na sztywno przekazywanych (cookie.base : "light")
+    const addons = getAddFromReq(req)
+    //wyrzucone na zewnatrz bo uzyte wiecej niz 1 raz
     
     const sum = (cookieBase ? handlebarsHelpers.priceFinder(Object.entries(cookie_base), cookieBase) : 0) 
     + addons.reduce((prev, curr)=> (prev+
+    //jak w config zrobione cookies pliki to mozna ich tutaj zaczac uzywac zamiast 'sztywnych'
     handlebarsHelpers.priceFinder(Object.entries(cookie_add), curr)) ,0) 
     //ale to jest zjebane i bym wolał w petli
     res.render('home_file/home' ,{

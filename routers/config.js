@@ -1,4 +1,5 @@
 const express = require('express');
+const { getAddFromReq } = require('../utils/get_add_from_req');
 const configuratorRouter = express.Router();
 
 
@@ -13,8 +14,8 @@ configuratorRouter
 })
     .get('/aditions/:add', (req,res)=>{
         const {add} = req.params;
-        const {cookieAdds} = req.cookies
-        const addons = cookieAdds ? JSON.parse(cookieAdds) : [];
+        
+        const addons = getAddFromReq(req)
         //jezeli są jakies ciastka z dodatkami to sparsuj jak nie to stworz liste
         addons.push(add)
         
