@@ -25,4 +25,15 @@ configuratorRouter
             .render('config_file/added', {add})
 })
 
+.get('/del/:add', (req,res)=>{
+        const {add} = req.params;
+        
+        const addons = getAddFromReq(req).filter(x => x !== add)
+        
+        res
+            .cookie('cookieAdds', JSON.stringify(addons))
+        // res.send(lightordark)
+            .render('config_file/deleted', {add})
+})
+
 module.exports = {configuratorRouter}

@@ -3,7 +3,7 @@
 <ul>
     <li>{{cookie.base}} : {{priceFinder bases cookie.base}} PLN</li>
     {{#each cookie.addon}}
-    <li>dodatek {{this}} : {{priceFinder @root.adds this}} pln</li>
+    <li>dodatek {{this}} : {{priceFinder @root.adds this}} pln <a href="/configurator/del/{{this}}">usun</a></li>
     {{/each}}
 </ul>
 
