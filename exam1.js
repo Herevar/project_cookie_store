@@ -39,7 +39,7 @@ app.set("views", "./views"); // wskazujemy scieżke folder views gdzies wszystko
 
 app.use('/', homeRouter);
 app.use('/configurator', configuratorRouter);
-app.use('/orderRouter', orderRouter);
+app.use('/order', orderRouter);
 
 app.get("/jo", (req, res) => {
   res.render("home_test", {

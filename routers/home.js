@@ -7,7 +7,7 @@ const homeRouter = express.Router();
 
 homeRouter
     .get('/', (req,res)=>{
-    const {cookieBase,} = req.cookies;
+    const {cookieBase} = req.cookies;
     //jak juz cookieBase jest to mozna uzyć zamiast na sztywno przekazywanych (cookie.base : "light")
     const addons = getAddFromReq(req)
     //wyrzucone na zewnatrz bo uzyte wiecej niz 1 raz

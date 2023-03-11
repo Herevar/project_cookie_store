@@ -3,7 +3,14 @@
 <ul>
     <li>{{cookie.base}} : {{priceFinder bases cookie.base}} PLN</li>
     {{#each cookie.addon}}
-    <li>dodatek {{this}} : {{priceFinder @root.adds this}} pln <a href="/configurator/del/{{this}}">usun</a></li>
+    <li>
+        dodatek {{this}} : {{priceFinder @root.adds this}} pln 
+        {{!-- {{unless to taka odwrotnosc if'a ale nie ma else, a w hbs nie zadziała zaprzeczenie}} --}}
+         {{!-- {{do tego musimy "wyjsc" wyzej, @root nie zadziała}} --}}
+        {{#unless ../przekazInfo}}
+            <a href="/configurator/del/{{this}}">usun</a>
+        {{/unless}}    
+    </li>
     {{/each}}
 </ul>
 
