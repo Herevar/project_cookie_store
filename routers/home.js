@@ -45,3 +45,6 @@ homeRouter
 
 //majac ciastko stworzone w konfiguratorze, mozemy je zapisac, a w pliku startowym odczytac na poczatku i podac
 module.exports = {homeRouter}
+
+
+// na koniec refaktoryzacja ; sum;cookie, base,adds,addons itp do funkcji zewnetrznych i tylko z niej korzystac; destrukturyzowac i nazwy ujednolicic podmieniajac
