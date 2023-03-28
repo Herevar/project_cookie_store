@@ -10,7 +10,7 @@
     "nodemon": "^2.0.21"
   },
   "scripts": {
-    "start": "node exam1.js"
+    "startx": "node exam1.js"
   },
   "devDependencies": {
     "@types/node": "^17.0.21"

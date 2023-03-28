@@ -1,5 +1,5 @@
 function showError (res,description){
-    return res.render('error', {
+    return res.render('errors/error', {
                 descripiton : `${description} `
             }) 
 }
