@@ -13,7 +13,7 @@ const { handlebarsHelpers } = require("./utils/handlebars-helpers");
 
 //npm i express-handlebars
 // app.use(express.static(path.join(__dirname, 'public')))
-app.use(express.static('public',));
+app.use(express.static('public',)); // czyli nie jest potrzebne ; statyczne to strony poszczegolne
 app.use(cookieParser());
 
 app.use(express.json());
